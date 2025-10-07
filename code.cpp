@@ -10,7 +10,10 @@ void func() {
     cin>>year;
     // (year % 100 ==0 )? (year % 400 == 0) ? cout<<"yes" : cout<<"no" : (year % 4 ==0) ? cout<<"yes" : cout<<"no"<<endl;
 
-    (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) ? cout<<"yes" : cout<<"no";
+    // (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) ? cout<<"yes" : cout<<"no";
+    int a = 5;
+    (a++);
+    cout<<a;
 
 }
 
