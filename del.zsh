@@ -6,6 +6,11 @@ delete_files() {
     for f in *; do
         if [[ -f "$f" ]]; then
             case $pattern in
+                "all")
+                    [[ "$f" != *.* ]] && echo "Deleting $f" && rm -f "$f"
+                    [[ "$f" == *.exe ]] && echo "Deleting $f" && rm -f "$f"
+                    [[ "$f" == *.out ]] && echo "Deleting $f" && rm -f "$f"
+                    ;;
                 "extensionless")
                     [[ "$f" != *.* ]] && echo "Deleting $f" && rm -f "$f"
                     ;;
@@ -35,7 +40,7 @@ if [[ $1 == "-o" ]]; then
     esac
 else
     # Default: delete extensionless files
-    delete_files "extensionless"
+    delete_files "all"
 fi
 
 echo "Operation completed!"

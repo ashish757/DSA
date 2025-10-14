@@ -1,6 +1,7 @@
-.DS_store
+.DS_Store
 *.out
 *.exe
+*.a
 *.dSYM
 .idea
 

@@ -1,0 +1,26 @@
+/*
+ * Author: Ashish Raj Singh (ashishrajsingh75@gmail.com)
+ * File Created: Tuesday, 14th Oct 2025 8:55:07 am
+
+ */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int n, k;
+    cin>>n>>k;
+    while(k--)
+    {
+        if(n % 10 == 0) {
+            n /= 10;
+        } else {
+            n -= 1;
+        }
+    }
+
+    cout<<n<<endl;
+
+    return 0;
+}
