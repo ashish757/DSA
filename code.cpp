@@ -75,12 +75,14 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    char a = 'f';
+    a =  a + 32;
+
+    cout<<a<<endl;
+
     // func();
 
-    armstrong();
-
-
-
+    // armstrong();
 
 
 
