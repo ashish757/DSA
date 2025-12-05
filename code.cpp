@@ -82,10 +82,52 @@ void isPrime(int n) {
     }
 }
 
+
+int fofs(vector<int> &v, int a, int b) {
+    int s = 0;
+    int c = 0;
+    for(int i = a; i <= b; i++) {
+        s += v[i];
+        c++;
+    }
+
+    int avg = floor(s/c);
+    int ans = 0;
+
+    for(int i = a; i<=b; i++) {
+        ans = max(ans, abs(avg - v[i]));
+    }
+
+    return ans;
+}
+
 int main() {
-    int n;
-    cin>>n;
     // your code goes here
-    isPrime(n);
+    // isPrime(n);
+
+
+        int t;
+        cin>>t;
+        while(t--) {
+            int n;
+            cin>>n;
+            vector<int> v(n);
+            for(int i =0; i<n;i++) {
+                cin>>v[i];
+            }
+
+            int ans = 0;
+
+            for(int i = 0; i < n; i++) {
+
+                for(int j = i+1; j < n; j++) {
+                    ans = max(ans, fofs(v, i, j));
+                }
+            }
+
+            cout<<ans<<endl;
+
+    }
+
 
 }
