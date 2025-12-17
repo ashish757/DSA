@@ -10,17 +10,11 @@ int main() {
     while(t--) {
         long long r, g, b, w;
         cin>>r>>g>>b>>w;
-        int odd = r%2 !=0 + g%2!=0 + b%2 != 0 + w%2 != 0;
-        if (odd > 1) {
-            r--;
-            g--;
-            b--;
-            w+=3;
-            odd = r%2 !=0 + g%2!=0 + b%2 != 0 + w%2 != 0;
-            if (odd > 1 || r<0||g<0||b<0||w<0) cout<<"NO"<<endl;
-            else cout<<"YES"<<endl;
-        } else {
-            cout<<"YES"<<endl;
+        int odd = r%2 + g%2+ b%2 + w%2;
+        if (odd <= 1) cout<<"YES"<<endl;
+        else if (r>0 && g>0 && b>0 && (r-1)%2 + (g-1)%2+ (b-1)%2 + (w+3)%2 <= 1) cout<<"YES"<<endl;
+        else {
+            cout<<"NO"<<endl;
         }
 
     }
