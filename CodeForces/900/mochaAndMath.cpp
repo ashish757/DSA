@@ -13,6 +13,7 @@ int main() {
 		cin>>n;
 		long long ans;
 		cin>>ans;
+
 		for(int i=1;i<n;i++) {
 			int a;
 			cin>>a;
